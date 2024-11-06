@@ -427,6 +427,94 @@ const TechnicalAudit = () => {
         </div>
       </div>
 
+
+      {/* Recommendations */}
+      <div className="bg-white rounded-xl p-8 shadow-sm border border-gray-100">
+        <h2 className="text-2xl font-light mb-6">Strategic Recommendations</h2>
+        <div className="grid md:grid-cols-3 gap-6">
+          {/* Patch Option */}
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-lg font-medium">
+                <div className="flex items-center space-x-2">
+                  <Zap className="h-5 w-5 text-yellow-500" />
+                  <span>Patch & Stabilize</span>
+                </div>
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                <p className="text-sm text-gray-600">Quick fixes focusing on critical security and stability issues while maintaining current architecture.</p>
+                <div className="space-y-2">
+                  <p className="text-sm font-medium">Timeline: 2-3 months</p>
+                  <p className="text-sm font-medium">Key Actions:</p>
+                  <ul className="text-sm text-gray-600 space-y-1">
+                    <li>• Address HIPAA compliance gaps</li>
+                    <li>• Implement basic testing</li>
+                    <li>• Fix critical performance issues</li>
+                    <li>• Expand team with QA resources</li>
+                  </ul>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Deep Refactor Option */}
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-lg font-medium">
+                <div className="flex items-center space-x-2">
+                  <Code2 className="h-5 w-5 text-blue-500" />
+                  <span>Deep Refactor</span>
+                </div>
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                <p className="text-sm text-gray-600">Comprehensive modernization of existing codebase with improved architecture and practices.</p>
+                <div className="space-y-2">
+                  <p className="text-sm font-medium">Timeline: 8-12 months</p>
+                  <p className="text-sm font-medium">Key Actions:</p>
+                  <ul className="text-sm text-gray-600 space-y-1">
+                    <li>• Implement microservices</li>
+                    <li>• Decouple business logic from app</li>
+                    <li>• Comprehensive test coverage</li>
+                    <li>• Modern CI/CD pipeline</li>
+                  </ul>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Rebuild on Olla Option */}
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-lg font-medium">
+                <div className="flex items-center space-x-2">
+                  <Server className="h-5 w-5 text-green-500" />
+                  <span>Rebuild on Olla</span>
+                </div>
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                <p className="text-sm text-gray-600">Complete system rebuild leveraging Olla's modern architecture and built-in compliance features.</p>
+                <div className="space-y-2">
+                  <p className="text-sm font-medium">Timeline: 4-6 months</p>
+                  <p className="text-sm font-medium">Key Actions:</p>
+                  <ul className="text-sm text-gray-600 space-y-1">
+                    <li>• Rebuild using best practices</li>
+                    <li>• Migrate config to Olla platform</li>
+                    <li>• Built-in HIPAA compliance</li>
+                    <li>• Modern scalable architecture</li>
+                  </ul>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+
       {/* Recent Examples */}
       {/*<div className="bg-white rounded-xl p-8 shadow-sm border border-gray-100">*/}
       {/*  <h2 className="text-2xl font-light mb-6">Recent Impact Examples</h2>*/}
