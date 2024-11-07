@@ -304,20 +304,131 @@ const TechnicalAudit = () => {
       </div>
 
       {/* Executive Alert */}
-      <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-        <div className="flex items-start space-x-4">
-          <AlertCircle className="h-6 w-6 text-red-500 mt-1" />
-          <div>
-            <h2 className="text-xl font-medium mb-2">Executive Summary</h2>
-            <p className="text-gray-600 leading-relaxed">
-              Our technical audit reveals significant concerns across security compliance, quality assurance, 
-              system reliability, and development practices.
-            </p>
+      <div className="flex items-start space-x-4">
+        <AlertCircle className="h-6 w-6 text-red-500 mt-1" />
+        <div>
+          <h2 className="text-xl font-medium mb-2">Executive Summary</h2>
+          <div className="text-gray-600 leading-relaxed space-y-4">
+            <p>Our technical audit reveals major system constraints and risks:</p>
+            <ul className="space-y-1 list-inside">
+              <li>• System architecture is tightly coupled to AllScripts, blocking multi-EHR support</li>
+              <li>• Critical HIPAA compliance gaps in PHI encryption and audit logging</li>
+              <li>• Performance issues from poor concurrent user handling and no caching</li>
+              <li>• High risk of new bugs with only 5% test coverage and no automated QA</li>
+              <li>• Growing code complexity severely impacts development speed and quality</li>
+              <li>• High likelihood of users discovering bugs in production due to limited testing</li>
+            </ul>
           </div>
         </div>
       </div>
 
+      {/* Recommendations */}
+      <div className="bg-white rounded-xl p-8 shadow-sm border border-gray-100">
+        <h2 className="text-2xl font-light mb-6">Strategic Recommendations</h2>
+        <div className="grid md:grid-cols-3 gap-6">
+          {/* Patch Option */}
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-lg font-medium">
+                <div className="flex items-center space-x-2">
+                  <Zap className="h-5 w-5 text-yellow-500" />
+                  <span>Patch & Stabilize</span>
+                </div>
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                <p className="text-sm text-gray-600">Short-term improvements with limited long-term impact. Requires ongoing maintenance effort.</p>
+                <div className="space-y-2">
+                  <p className="text-sm font-medium">Timeline: 2-3 months</p>
+                  <p className="text-sm font-medium">Key Actions:</p>
+                  <ul className="text-sm text-gray-600 space-y-1">
+                    <li>• Address critical HIPAA & security gaps</li>
+                    <li>• Implement basic testing & QA</li>
+                    <li>• Fix major performance issues</li>
+                    <li>• Add monitoring & logging</li>
+                  </ul>
+                  <p className="text-sm font-medium mt-4">Impact:</p>
+                  <ul className="text-sm text-gray-600 space-y-1">
+                    <li>• Core architectural limitations remain</li>
+                    <li>• Ongoing high maintenance burden</li>
+                    <li>• Limited long-term improvement</li>
+                  </ul>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Deep Refactor Option */}
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-lg font-medium">
+                <div className="flex items-center space-x-2">
+                  <Code2 className="h-5 w-5 text-blue-500" />
+                  <span>Deep Refactor</span>
+                </div>
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                <p className="text-sm text-gray-600">Modernization of existing codebase while maintaining core functionality. Longer development cycle.</p>
+                <div className="space-y-2">
+                  <p className="text-sm font-medium">Timeline: 12-14 months</p>
+                  <p className="text-sm font-medium">Key Actions:</p>
+                  <ul className="text-sm text-gray-600 space-y-1">
+                    <li>• Implement proper architecture</li>
+                    <li>• Abstract EHR integration layer</li>
+                    <li>• Add comprehensive testing</li>
+                    <li>• Add monitoring & logging</li>
+                  </ul>
+                  <p className="text-sm font-medium mt-4">Impact:</p>
+                  <ul className="text-sm text-gray-600 space-y-1">
+                    <li>• Extended development timeline</li>
+                    <li>• High transition risk & complexity</li>
+                    <li>• Partial architectural improvement</li>
+                  </ul>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Rebuild on Olla Option */}
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-lg font-medium">
+                <div className="flex items-center space-x-2">
+                  <Server className="h-5 w-5 text-green-500" />
+                  <span>Rebuild on Olla</span>
+                </div>
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                <p className="text-sm text-gray-600">Modern rebuild preserving user workflows while enabling rapid, secure development using engineering best practices.</p>
+                <div className="space-y-2">
+                  <p className="text-sm font-medium">Timeline: 4-6 months</p>
+                  <p className="text-sm font-medium">Key Actions:</p>
+                  <ul className="text-sm text-gray-600 space-y-1">
+                    <li>• Migrate to modern Olla architecture</li>
+                    <li>• Implement built-in compliance</li>
+                    <li>• Enable multi-EHR support</li>
+                    <li>• Preserve existing workflows</li>
+                  </ul>
+                  <p className="text-sm font-medium mt-4">Impact:</p>
+                  <ul className="text-sm text-gray-600 space-y-1">
+                    <li>• Faster, more secure future development</li>
+                    <li>• Built-in security & maintainability</li>
+                    <li>• Lower long-term resource needs</li>
+                  </ul>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+
       {/* System Health Areas */}
+      <h2 className="text-xl font-medium mb-2">Audit Results</h2>
       <div className="grid md:grid-cols-2 gap-6">
         {healthAreas.map((area, index) => (
           <div key={index} className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
@@ -428,92 +539,7 @@ const TechnicalAudit = () => {
       </div>
 
 
-      {/* Recommendations */}
-      <div className="bg-white rounded-xl p-8 shadow-sm border border-gray-100">
-        <h2 className="text-2xl font-light mb-6">Strategic Recommendations</h2>
-        <div className="grid md:grid-cols-3 gap-6">
-          {/* Patch Option */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-lg font-medium">
-                <div className="flex items-center space-x-2">
-                  <Zap className="h-5 w-5 text-yellow-500" />
-                  <span>Patch & Stabilize</span>
-                </div>
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                <p className="text-sm text-gray-600">Quick fixes focusing on critical security and stability issues while maintaining current architecture.</p>
-                <div className="space-y-2">
-                  <p className="text-sm font-medium">Timeline: 2-3 months</p>
-                  <p className="text-sm font-medium">Key Actions:</p>
-                  <ul className="text-sm text-gray-600 space-y-1">
-                    <li>• Address HIPAA compliance gaps</li>
-                    <li>• Implement basic testing</li>
-                    <li>• Fix critical performance issues</li>
-                    <li>• Expand team with QA resources</li>
-                  </ul>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
 
-          {/* Deep Refactor Option */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-lg font-medium">
-                <div className="flex items-center space-x-2">
-                  <Code2 className="h-5 w-5 text-blue-500" />
-                  <span>Deep Refactor</span>
-                </div>
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                <p className="text-sm text-gray-600">Comprehensive modernization of existing codebase with improved architecture and practices.</p>
-                <div className="space-y-2">
-                  <p className="text-sm font-medium">Timeline: 8-12 months</p>
-                  <p className="text-sm font-medium">Key Actions:</p>
-                  <ul className="text-sm text-gray-600 space-y-1">
-                    <li>• Implement microservices</li>
-                    <li>• Decouple business logic from app</li>
-                    <li>• Comprehensive test coverage</li>
-                    <li>• Modern CI/CD pipeline</li>
-                  </ul>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Rebuild on Olla Option */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-lg font-medium">
-                <div className="flex items-center space-x-2">
-                  <Server className="h-5 w-5 text-green-500" />
-                  <span>Rebuild on Olla</span>
-                </div>
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                <p className="text-sm text-gray-600">Complete system rebuild leveraging Olla's modern architecture and built-in compliance features.</p>
-                <div className="space-y-2">
-                  <p className="text-sm font-medium">Timeline: 4-6 months</p>
-                  <p className="text-sm font-medium">Key Actions:</p>
-                  <ul className="text-sm text-gray-600 space-y-1">
-                    <li>• Rebuild using best practices</li>
-                    <li>• Migrate config to Olla platform</li>
-                    <li>• Built-in HIPAA compliance</li>
-                    <li>• Modern scalable architecture</li>
-                  </ul>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </div>
 
       {/* Recent Examples */}
       {/*<div className="bg-white rounded-xl p-8 shadow-sm border border-gray-100">*/}
