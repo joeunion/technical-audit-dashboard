@@ -314,7 +314,7 @@ const TechnicalAudit = () => {
               <li>• System architecture is tightly coupled to AllScripts, blocking multi-EHR support</li>
               <li>• Critical HIPAA compliance gaps in PHI encryption and audit logging</li>
               <li>• Performance issues from poor concurrent user handling and no caching</li>
-              <li>• High risk of new bugs with only 5% test coverage and no automated QA</li>
+              <li>• High risk of new bugs with only 5% test coverage and no manual or automated QA</li>
               <li>• Growing code complexity severely impacts development speed and quality</li>
               <li>• High likelihood of users discovering bugs in production due to limited testing</li>
             </ul>
@@ -332,27 +332,34 @@ const TechnicalAudit = () => {
               <CardTitle className="text-lg font-medium">
                 <div className="flex items-center space-x-2">
                   <Zap className="h-5 w-5 text-yellow-500" />
-                  <span>Patch & Stabilize</span>
+                  <span>Option 1: Patch & Stabilize</span>
                 </div>
               </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
-                <p className="text-sm text-gray-600">Short-term improvements with limited long-term impact. Requires ongoing maintenance effort.</p>
+                <p className="text-sm text-gray-600">Quick fixes to EZDocs system while maintaining legacy architecture.</p>
                 <div className="space-y-2">
                   <p className="text-sm font-medium">Timeline: 2-3 months</p>
                   <p className="text-sm font-medium">Key Actions:</p>
                   <ul className="text-sm text-gray-600 space-y-1">
-                    <li>• Address critical HIPAA & security gaps</li>
-                    <li>• Implement basic testing & QA</li>
-                    <li>• Fix major performance issues</li>
-                    <li>• Add monitoring & logging</li>
+                    <li>• Patch HIPAA compliance gaps</li>
+                    <li>• Add basic testing</li>
+                    <li>• Performance band-aids</li>
+                    <li>• Basic monitoring</li>
                   </ul>
                   <p className="text-sm font-medium mt-4">Impact:</p>
                   <ul className="text-sm text-gray-600 space-y-1">
-                    <li>• Core architectural limitations remain</li>
-                    <li>• Ongoing high maintenance burden</li>
-                    <li>• Limited long-term improvement</li>
+                    <li>• Remains tightly coupled to AllScripts</li>
+                    <li>• No modern API architecture</li>
+                    <li>• Poor concurrent user support</li>
+                    <li>• Limited scalability</li>
+                  </ul>
+                  <p className="text-sm font-medium mt-4">Resources Required:</p>
+                  <ul className="text-sm text-gray-600 space-y-1">
+                    <li>• 1x new QA resources</li>
+                    <li>• Existing development team</li>
+                    <li>• Basic monitoring budget</li>
                   </ul>
                 </div>
               </div>
@@ -365,60 +372,74 @@ const TechnicalAudit = () => {
               <CardTitle className="text-lg font-medium">
                 <div className="flex items-center space-x-2">
                   <Code2 className="h-5 w-5 text-blue-500" />
-                  <span>Deep Refactor</span>
+                  <span>Option 2: Deep Refactor</span>
                 </div>
               </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
-                <p className="text-sm text-gray-600">Modernization of existing codebase while maintaining core functionality. Longer development cycle.</p>
+                <p className="text-sm text-gray-600">Modernize EZDocs codebase while maintaining server-side rendering architecture.</p>
                 <div className="space-y-2">
                   <p className="text-sm font-medium">Timeline: 12-14 months</p>
                   <p className="text-sm font-medium">Key Actions:</p>
                   <ul className="text-sm text-gray-600 space-y-1">
-                    <li>• Implement proper architecture</li>
-                    <li>• Abstract EHR integration layer</li>
-                    <li>• Add comprehensive testing</li>
-                    <li>• Add monitoring & logging</li>
+                    <li>• Improve current architecture</li>
+                    <li>• Add security & compliance</li>
+                    <li>• Basic EHR abstraction</li>
+                    <li>• Add testing coverage</li>
                   </ul>
                   <p className="text-sm font-medium mt-4">Impact:</p>
                   <ul className="text-sm text-gray-600 space-y-1">
-                    <li>• Extended development timeline</li>
-                    <li>• High transition risk & complexity</li>
-                    <li>• Partial architectural improvement</li>
+                    <li>• Still no modern API architecture</li>
+                    <li>• Limited by server-side rendering</li>
+                    <li>• Complex state management remains</li>
+                    <li>• Performance constraints persist</li>
+                  </ul>
+                  <p className="text-sm font-medium mt-4">Resources Required:</p>
+                  <ul className="text-sm text-gray-600 space-y-1">
+                    <li>• Additional QA resources</li>
+                    <li>• Extended development team</li>
+                    <li>• Infrastructure upgrade costs</li>
                   </ul>
                 </div>
               </div>
             </CardContent>
           </Card>
 
-          {/* Rebuild on Olla Option */}
+          {/* Build on Olla Option */}
           <Card>
             <CardHeader>
               <CardTitle className="text-lg font-medium">
                 <div className="flex items-center space-x-2">
                   <Server className="h-5 w-5 text-green-500" />
-                  <span>Rebuild on Olla</span>
+                  <span>Option 3: Provider UX on Olla</span>
                 </div>
               </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
-                <p className="text-sm text-gray-600">Modern rebuild preserving user workflows while enabling rapid, secure development using engineering best practices.</p>
+                <p className="text-sm text-gray-600">Support existing provider workflows using modern infrastructure on Olla.</p>
                 <div className="space-y-2">
-                  <p className="text-sm font-medium">Timeline: 4-6 months</p>
+                  <p className="text-sm font-medium">Timeline: 5-7 months</p>
                   <p className="text-sm font-medium">Key Actions:</p>
                   <ul className="text-sm text-gray-600 space-y-1">
-                    <li>• Migrate to modern Olla architecture</li>
-                    <li>• Implement built-in compliance</li>
+                    <li>• Match existing provider workflows</li>
+                    <li>• Leverage proven infrastructure</li>
                     <li>• Enable multi-EHR support</li>
-                    <li>• Preserve existing workflows</li>
+                    <li>• Built-in compliance frameworks</li>
                   </ul>
                   <p className="text-sm font-medium mt-4">Impact:</p>
                   <ul className="text-sm text-gray-600 space-y-1">
-                    <li>• Faster, more secure future development</li>
-                    <li>• Built-in security & maintainability</li>
-                    <li>• Lower long-term resource needs</li>
+                    <li>• Modern API-first architecture</li>
+                    <li>• Reuse existing Olla infrastructure</li>
+                    <li>• Maintain workflow familiarity</li>
+                    <li>• Faster feature development cycles</li>
+                  </ul>
+                  <p className="text-sm font-medium mt-4">Resources Required:</p>
+                  <ul className="text-sm text-gray-600 space-y-1">
+                    <li>• Shift budget to ForthBridge ProServe</li>
+                    <li>• ForthBridge manages EZDocs</li>
+                    <li>• ForthBridge implements Olla</li>
                   </ul>
                 </div>
               </div>
